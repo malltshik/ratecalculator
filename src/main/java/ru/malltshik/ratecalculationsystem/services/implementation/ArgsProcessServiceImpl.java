@@ -14,6 +14,11 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * {@link ArgsProcessService} documented
+ *
+ * @author Artem Gavrilov
+ */
 @Service
 public class ArgsProcessServiceImpl implements ArgsProcessService {
 
@@ -26,25 +31,25 @@ public class ArgsProcessServiceImpl implements ArgsProcessService {
     @Override
     @Nullable
     public ArgsModel validate(@NonNull List<String> args) {
-        if(args.size() < 2) {
+        if (args.size() < 2) {
             System.out.println("Count of arguments should be 2.");
             return null;
         }
         File marketFile = validateMarketFile(args.get(0));
         Integer loanAmount = validateLoanAmount(args.get(1));
-        if(marketFile == null || loanAmount == null) return null;
-        return new ArgsModel(marketFile,loanAmount);
+        if (marketFile == null || loanAmount == null) return null;
+        return new ArgsModel(marketFile, loanAmount);
     }
 
     @Nullable
     private Integer validateLoanAmount(String arg) {
         try {
             int amount = parseInt(arg);
-            if(amount < MIN_LOAN) {
+            if (amount < MIN_LOAN) {
                 System.out.println("Amount should be more then £1000.");
                 return null;
             }
-            if(amount > MAX_LOAN) {
+            if (amount > MAX_LOAN) {
                 System.out.println("Amount should be less then £15000.");
                 return null;
             }
@@ -58,7 +63,7 @@ public class ArgsProcessServiceImpl implements ArgsProcessService {
     @Nullable
     private File validateMarketFile(String arg) {
         Path path = Paths.get(arg);
-        if(!Files.exists(path)) {
+        if (!Files.exists(path)) {
             System.out.println(String.format("File %s does not exist", arg));
             return null;
         } else return path.toFile();

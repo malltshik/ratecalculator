@@ -6,7 +6,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import javax.validation.constraints.NotNull;
 
-
+/**
+ * Spring boot custom application properties
+ *
+ * @author Artem Gavrilov
+ */
 @Getter
 @Setter
 @ConfigurationProperties("loan")

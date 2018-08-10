@@ -13,6 +13,11 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * {@link LanderRepository} documented
+ *
+ * @author Artem Gavrilov
+ */
 @Repository
 public class LanderCsvRepository implements LanderRepository {
 

@@ -16,6 +16,13 @@ import ru.malltshik.ratecalculationsystem.services.UsageService;
 
 import static org.springframework.boot.Banner.Mode.OFF;
 
+/**
+ * Rate Calculation System - job test application
+ * There is a need for a rate calculation system allowing prospective borrowers
+ * to obtain a quote from our pool of lenders for 36 month loans.
+ *
+ * @author Artem Gavrilov
+ */
 @SpringBootApplication
 @EnableConfigurationProperties(LoanProperties.class)
 public class RateCalculationSystemApplication implements ApplicationRunner {

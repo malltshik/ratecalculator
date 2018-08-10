@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * Lander data transfer object
+ *
+ * @author Artem Gavrilov
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

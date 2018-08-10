@@ -15,6 +15,11 @@ import java.math.RoundingMode;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * {@link RateCalculationService} documented
+ *
+ * @author Artem Gavrilov
+ */
 @Service
 public class RateCalculationServiceImpl implements RateCalculationService {
 
