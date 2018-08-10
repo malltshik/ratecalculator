@@ -40,7 +40,7 @@ public class RateCalculationSystemApplication implements ApplicationRunner {
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(RateCalculationSystemApplication.class);
         application.setBannerMode(OFF);
-        application.run("src/main/resources/market.csv", "1000");
+        application.run(args);
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Quote {
 
     public void add(Quote quote) {
         this.requestAmount = requestAmount + quote.requestAmount;
-        this.rate = (rate + quote.rate) / 2;
+        this.rate = rate > 0 ? (rate + quote.rate) / 2 : quote.rate;
         this.monthlyRepayment = monthlyRepayment + quote.monthlyRepayment;
         this.totalRepayment = totalRepayment + quote.totalRepayment;
     }

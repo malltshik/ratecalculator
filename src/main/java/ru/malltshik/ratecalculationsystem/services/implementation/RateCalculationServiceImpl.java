@@ -43,12 +43,11 @@ public class RateCalculationServiceImpl implements RateCalculationService {
 
     private void calculate(Integer loanAmount, List<Lander> landers, Quote quote) {
         landers.sort(Comparator.comparing(Lander::getRate));
-        while (loanAmount > 0) {
-            for(Lander lander: landers) {
-                Quote subQuote = calculateQuote(lander, loanAmount);
-                loanAmount = loanAmount - subQuote.getRequestAmount();
-                quote.add(subQuote);
-            }
+        for (Lander lander : landers) {
+            Quote subQuote = calculateQuote(lander, loanAmount);
+            loanAmount = loanAmount - subQuote.getRequestAmount();
+            quote.add(subQuote);
+            if (loanAmount <= 0) break;
         }
     }
 
@@ -64,6 +63,7 @@ public class RateCalculationServiceImpl implements RateCalculationService {
                         .pow(-LOAN_LENGTH, MathContext.DECIMAL64))), RoundingMode.HALF_UP);
         quote.setMonthlyRepayment(monthlyPayment.doubleValue());
         quote.setTotalRepayment(monthlyPayment.multiply(BigDecimal.valueOf(LOAN_LENGTH)).doubleValue());
+        quote.setPossible(true);
         return quote;
     }
 
