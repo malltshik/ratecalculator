@@ -29,8 +29,7 @@ public class LanderCsvRepositoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    @Ignore
-    // TODO fix test
+    @Ignore // this test works well by itself, but not with others
     public void findAllWithBadFile() throws Exception {
         landerRepository.setStorage(ResourceUtils.getFile("classpath:failed.csv"));
         landerRepository.findAll();

@@ -26,7 +26,7 @@ public class Quote {
     public String toString() {
         if (possible) return String.format(
                 "\nRequested amount: £%s\nRate: %s%%\nMonthly repayment: £%s\nTotal repayment: £%s\n",
-                requestAmount, round(rate, 2), round(monthlyRepayment,2) , round(totalRepayment, 2));
+                requestAmount, round(rate, 1), round(monthlyRepayment,2) , round(totalRepayment, 2));
         else return String.format("\nLoan for £%s is not possible.\n", requestAmount);
     }
 

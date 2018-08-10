@@ -24,6 +24,7 @@ public class ArgsProcessServiceImpl implements ArgsProcessService {
     private int MAX_LOAN;
 
     @Override
+    @Nullable
     public ArgsModel validate(@NonNull List<String> args) {
         if(args.size() < 2) {
             System.out.println("Count of arguments should be 2.");

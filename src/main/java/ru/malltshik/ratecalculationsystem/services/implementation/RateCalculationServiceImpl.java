@@ -2,6 +2,7 @@ package ru.malltshik.ratecalculationsystem.services.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import ru.malltshik.ratecalculationsystem.models.Lander;
 import ru.malltshik.ratecalculationsystem.models.Quote;
@@ -28,6 +29,7 @@ public class RateCalculationServiceImpl implements RateCalculationService {
     }
 
     @Override
+    @NonNull
     public Quote calculate(Integer loanAmount) {
         Quote quote = new Quote();
         List<Lander> landers = landerRepository.findAll();
