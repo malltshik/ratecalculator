@@ -26,7 +26,7 @@ is not possible to provide a quote at that time.
  
  - Install
  ``` bash    
- cd ratecalculator && mvn clean install
+ cd ratecalculator && ./mvnw clean install
  ```
  
  - Run
