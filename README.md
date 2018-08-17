@@ -17,6 +17,12 @@ Borrowers should be able to request a loan of any £100 increment between
 lenders to satisfy the loan then the system should inform the borrower that it
 is not possible to provide a quote at that time.
 
+## Todo
+- Memory leak reading the file
+- Anemic domain
+- Wrong java conventions and naming
+- Wrong results, rate is totally wrong
+
 ## Install & Run
 
  - Clone repository
